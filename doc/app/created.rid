@@ -1,0 +1,6 @@
+Wed, 07 Sep 2016 20:35:20 -0400
+README.rdoc	Wed, 07 Sep 2016 13:29:56 -0400
+app/controllers/application_controller.rb	Wed, 07 Sep 2016 13:29:56 -0400
+app/controllers/aws_controller.rb	Wed, 07 Sep 2016 20:04:03 -0400
+app/helpers/application_helper.rb	Wed, 07 Sep 2016 13:29:56 -0400
+app/helpers/aws_helper.rb	Wed, 07 Sep 2016 20:31:06 -0400
