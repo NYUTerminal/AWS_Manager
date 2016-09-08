@@ -5,24 +5,41 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+Rails app to manage your AWS EC2 instance .
 
-* System dependencies
+This project supports starting and stopping the serving using rails . 
 
-* Configuration
+Configuration : 
 
-* Database creation
+git clone https://github.com/NYUTerminal/AWS_Manager.git
 
-* Database initialization
+bundle install (to install dependencies)
 
-* How to run the test suite
+create a folder ".aws" in root directory (" ~/ ").
 
-* Services (job queues, cache servers, search engines, etc.)
+create a file secrets.json in .aws directory
 
-* Deployment instructions
+Sample : 
 
-* ...
+{
+"aws_access_key_id":"aws instance access key",
+"aws_secret_access_key":"aws instance access password",
+"region":"aws instance region",
+"instance":"name of your instance"
+}
 
+Please follow this instructions to create aws instance access key and password.
+1) Create user at "https://console.aws.amazon.com/iam/home#users" (login with your AWS account)
+2) Get the access key id and secret and paste it to secrets.json
+2) Click on the user created and go to Permissions tab .
+3) Attach Policy for AmazonEC2FullAccess . (depends on the permissions you want to grant to the user) 
+4) Add region and Instance name in the secrets.json
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+rails s (to start the server)
+
+http://localhost:3000/aws/start (To start AWS EC2 Server)
+ 
+http://localhost:3000/aws/stop (To stop AWS EC2 Server)
+
+http://localhost:3000/aws/status (To check status of AWS EC2 Server)
+
