@@ -19,9 +19,9 @@ class AwsController < ApplicationController
   end
 
   def status
-    AwsHelper.status
+    @status = AwsHelper.status
     respond_to do |format|
-      format.html { render template: 'status/start' }
+      format.html { render template: 'status/status' }
     end
   end
 

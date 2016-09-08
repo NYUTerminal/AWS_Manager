@@ -56,4 +56,5 @@ Rails.application.routes.draw do
 
   get 'aws/start' => 'aws#start'
   get 'aws/stop' => 'aws#stop'
+  get 'aws/status' => 'aws#status'
 end

@@ -36,6 +36,7 @@ module AwsHelper
 
   def self.status
     initialize
-    puts "Instance #{@aws_ec2.instance_id} is #{@aws_ec2.state}"
+    puts "Instance #{@aws_ec2.instance_id} is #{@aws_ec2.state.name}"
+    @status = @aws_ec2.state.name
   end
 end
