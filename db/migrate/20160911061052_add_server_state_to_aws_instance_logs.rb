@@ -1,5 +1,5 @@
 class AddServerStateToAwsInstanceLogs < ActiveRecord::Migration
   def change
-  	add_column :server_state, :aws_instance_logs, :string
+  	add_column :aws_instance_logs, :server_state, :string
   end
 end
