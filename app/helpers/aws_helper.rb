@@ -13,25 +13,11 @@ module AwsHelper
   end
 
   def self.start
-    initialize
-    byebug
-    @aws_ec2.start
-    @aws_ec2.wait_until_running
-    puts "Instance #{@aws_ec2.instance_id} is running"
+    
   end
 
   def self.stop
-    initialize
-    byebug
-    if @aws_ec2.state.name == "stopped"
-      puts "Instance #{@aws_ec2.instance_id} was already stopped"
-      return
-    else
-      byebug
-      @aws_ec2.stop
-      @aws_ec2.wait_until_stopped
-      puts "Instance #{@aws_ec2.instance_id} stopped"
-    end
+    
   end
 
   def self.status
