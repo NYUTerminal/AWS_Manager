@@ -7,7 +7,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-
+  host: localhost
+  pool: 5
+  
 development:
   <<: *default
   database: aws_manager_dev
