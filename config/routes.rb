@@ -53,8 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  get 'aws/start' => 'aws#start'
-  get 'aws/stop' => 'aws#stop'
-  get 'aws/status' => 'aws#status'
+    # resources :start, only: :index
+    get "/start", to: "aws#start"
+    post "/stop" , to: "aws#stop"
+    get "/status" , to: "aws#status"
 end
