@@ -13,7 +13,6 @@ class Api::V1::AwsController < ApplicationController
     @aws_ec2.wait_until_running
     puts "Instance #{@aws_ec2.instance_id} is running"
     @server_status = AwsInstanceLog.save_log(@aws_ec2.instance_id,'start','EC2','running')
-    # @server_status = AwsInstanceLog.where(id: id).first
     respond_to do |format|
       format.json {render json: @server_status,status: :ok}
     end
@@ -37,7 +36,6 @@ class Api::V1::AwsController < ApplicationController
 
   def status
     @aws_ec2 = AwsHelper.initialize
-    # byebug
     puts "Instance #{@aws_ec2.instance_id} is #{@aws_ec2.state.name}"
     @status = @aws_ec2.state.name
     @server_status = AwsInstanceLog.save_log(@aws_ec2.instance_id,'status','EC2',@status)
@@ -102,7 +100,6 @@ class Api::V1::AwsController < ApplicationController
   end
 
   def contact_params
-    byebug
     params.permit(:aws_access_key_id, :aws_secret_access_key, :region,:instance)
   end
 
