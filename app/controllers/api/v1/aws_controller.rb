@@ -48,7 +48,7 @@ class Api::V1::AwsController < ApplicationController
   # Lot of same code from GET methods .. Can be optimized . If we can write it to helper methods.
   def start_instance
     begin
-      aws_ec2 = AwsHelper.post_initialize(contact_params)
+      @aws_ec2 = AwsHelper.post_initialize(contact_params)
       @aws_ec2.start
       @aws_ec2.wait_until_running
       puts "Instance #{@aws_ec2.instance_id} is running"
