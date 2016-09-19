@@ -10,7 +10,6 @@ class AwsController < ApplicationController
     @aws_ec2.start
     @aws_ec2.wait_until_running
     puts "Instance #{@aws_ec2.instance_id} is running"
-    byebug
     @server_status = AwsInstanceLog.save_log(@aws_ec2.instance_id,'start','EC2','running')
     # @server_status = AwsInstanceLog.where(id: id).first
     respond_to do |format|
