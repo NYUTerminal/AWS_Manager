@@ -52,3 +52,43 @@ Sample :
 
 This project is deployed at Amazon EC2 instance : ec2-54-70-80-88.us-west-2.compute.amazonaws.com
 can be used to start stop or check status of another EC2 instance. 
+
+
+AWS EC2 Server Configuration :
+
+         sudo apt-get update
+         sudo apt-get install build-essential libssl-dev libyaml-dev libreadline-dev openssl curl git-core zlib1g-dev bison libxml2-dev libxslt1-dev libcurl4-openssl-dev libsqlite3-dev
+
+Install Postgress : 
+         sudo apt-get install postgresql postgresql-contrib libpq-dev
+         sudo -u postgres createuser -s #username
+         TO SET PASSWORD
+         sudo -u postgres psql
+         \password #Type password
+
+Ruby Installation:
+         sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+         gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+         curl -sSL https://get.rvm.io | bash -s stable
+         source ~/.rvm/scripts/rvm
+         rvm install 2.3.1
+         rvm use 2.3.1 --default
+         ruby -v
+
+Apache2 Installation: 
+         sudo apt-get install apache2
+
+Passenger Installation:
+         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+         sudo nano /etc/apt/sources.list.d/passenger.list
+         deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main
+         Press CTRL+X to exit, type Y to save the file, and then press ENTER to confirm the file location.
+         sudo chown root: /etc/apt/sources.list.d/passenger.list
+         sudo chmod 600 /etc/apt/sources.list.d/passenger.list
+         
+         sudo apt-get update
+         
+         sudo apt-get install libapache2-mod-passenger
+         
+         sudo a2enmod passenger
+         sudo service apache2 restart
