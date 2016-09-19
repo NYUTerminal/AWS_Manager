@@ -3,7 +3,7 @@ require 'optparse'
 require 'yaml'
 require 'json'
 
-class AwsController < ApplicationController
+class Api::V1::AwsController < ApplicationController
 
   skip_before_filter  :verify_authenticity_token
 

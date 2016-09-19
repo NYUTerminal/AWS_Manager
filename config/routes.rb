@@ -54,7 +54,14 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
     # resources :start, only: :index
-    get "/start", to: "aws#start"
-    post "/stop" , to: "aws#stop"
-    get "/status" , to: "aws#status"
+    namespace :api, :defaults => {:format => :json} do
+      namespace :v1 do
+        post "/start" , to: "aws#start_instance"
+        post "/stop" , to: "aws#stop_instance"
+        post "/status" , to: "aws#status_instance"
+        get "/start", to: "aws#start"
+        get "/stop" , to: "aws#stop"
+        get "/status" , to: "aws#status"
+      end
+    end
 end
