@@ -57,8 +57,8 @@ class Api::V1::AwsController < ApplicationController
       respond_to do |format|
         format.json {render json: @server_status,status: :ok}
       end
-    rescue
-      render json: @contact.errors, status: :unprocessable_entity
+    rescue => ex
+      render json: ex.message, status: :unprocessable_entity
     end
   end
 
@@ -77,8 +77,8 @@ class Api::V1::AwsController < ApplicationController
       respond_to do |format|
         format.json {render json: @server_status,status: :ok}
       end
-    rescue
-      render json: @contact.errors, status: :unprocessable_entity
+    rescue => ex
+      render json: ex.message, status: :unprocessable_entity
     end
 
   end
@@ -93,8 +93,8 @@ class Api::V1::AwsController < ApplicationController
       respond_to do |format|
         format.json {render json: @server_status,status: :ok}
       end
-    rescue
-      render json: @contact.errors, status: :unprocessable_entity
+    rescue => ex
+      render json: ex.message, status: :unprocessable_entity
     end
 
   end
